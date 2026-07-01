@@ -77,3 +77,7 @@ export function listVideos() {
 		method: 'GET'
 	});
 }
+
+export function getDownloadUrl(filename: string) {
+	return `${API_URL}/api/file/download/${encodeURIComponent(filename)}`;
+}
