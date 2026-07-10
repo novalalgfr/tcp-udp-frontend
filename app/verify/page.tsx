@@ -4,9 +4,12 @@ import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/retroui/Button';
 import { verifyAccount } from '@/lib/api';
+import { useRouter } from 'next/router';
 
 // 1. Pisahkan logika utama ke komponen terpisah
 function VerifyContent() {
+	const router = useRouter();
+
 	const searchParams = useSearchParams();
 	const token = searchParams.get('token');
 
@@ -42,7 +45,7 @@ function VerifyContent() {
 					</div>
 					<p className="font-head text-lg uppercase mb-2">Verifikasi Berhasil</p>
 					<p className="text-sm text-neutral-700 mb-6">{message}</p>
-					<Button onClick={() => (window.location.href = '/login')}>Ke Halaman Login</Button>
+					<Button onClick={() => router.push('/login')}>Ke Halaman Login</Button>
 				</>
 			)}
 
