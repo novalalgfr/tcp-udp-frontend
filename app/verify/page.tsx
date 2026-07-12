@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/retroui/Button';
 import { verifyAccount } from '@/lib/api';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 // 1. Pisahkan logika utama ke komponen terpisah
 function VerifyContent() {
